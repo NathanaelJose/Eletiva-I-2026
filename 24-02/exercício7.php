@@ -19,13 +19,10 @@
 <?php 
     if ($_SERVER['REQUEST_METHOD'] == "POST")
     {
-        function fahrenheitParaCelsius($fahrenheit){
-            return ($fahrenheit - 32) * 5 / 9;
-        }
-        $f = 98.6;
-        $c = fahrenheitParaCelsius($f);
-        
-        echo "{$f}°F é igual a " . round($c, 2) . "°C";
+        $valor1 = $_POST['valor1'];
+
+        $calc = ($valor1 - 32) * 0.5555;
+        echo "$valor1 F = $calc ºC";
     }
 ?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
