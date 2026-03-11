@@ -11,21 +11,25 @@
 <h1>Exercício 16</h1>
 <form method="post">
 <div class="mb-3">
-              <label for="valor1" class="form-label">Insira o peso:</label>
-              <input type="number" id="peso" name="peso" class="form-control" required="">
-              <label for="valor1" class="form-label">Insira a altura:</label>
-              <input type="number" id="altura" name="altura" class="form-control" required="" step="0.01">
+              <label for="valor1" class="form-label">Insira o preço:</label>
+              <input type="number" id="precoOriginal" name="precoOriginal" class="form-control" required="">
+              <label for="valor1" class="form-label">Insira o percentual:</label>
+              <input type="number" id="percentualDesconto" name="percentualDesconto" class="form-control" required="" step="0.01">
             </div>
 <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
 <?php
     if ($_SERVER['REQUEST_METHOD'] == "POST")
     {
-        $peso = $_POST['peso'];
-        $altura = $_POST['altura'];
-        $imc = $peso / ($altura * $altura);
+        $precoOriginal = $_POST['precoOriginal'];
+        $percentualDesconto = $_POST['percentualDesconto'];
 
-        echo "O seu IMC é: " . number_format($imc, 2);
+        $valorDesconto = precoOriginal * (percentualDesconto / 100);
+        $precoComDesconto = precoOriginal - $valorDesconto;
+
+        echo "Preço original do produto: R$" . number_format($precoOriginal, 2);
+        echo "Desconto: " . $percentualDesconto . "%";
+        echo "Preço Final: R$" . number_format($precoComDesconto, 2);
     }
 ?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
