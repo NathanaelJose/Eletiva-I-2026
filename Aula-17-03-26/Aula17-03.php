@@ -8,4 +8,5 @@
     $mapa2[1] = "Vanessa";
     $mapa2[2] = "José";
     $mapa2[3] = "Clara";
+    print_r($mapa2);
 ?>
