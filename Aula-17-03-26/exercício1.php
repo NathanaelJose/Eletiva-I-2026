@@ -20,10 +20,11 @@
 <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
 <?php
-    if($_SERVER['REQUEST METHOD'] == "POST"){
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
         $mapa = $_POST['nota'];
         $copia_mapa = $mapa;
-        asort($mapa);
+        sort($mapa);
+        var_dump($mapa);
         echo "<p>O menor valor é: ".$mapa[0]."</p>";
         $posicao = array_search($mapa[0], $copia_mapa);
         echo "<p>Na posição $posicao </p>";
