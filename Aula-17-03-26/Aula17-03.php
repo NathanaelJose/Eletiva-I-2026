@@ -22,4 +22,7 @@
     foreach($contatos as $chave => $valor){
         echo "<p> Telefone de $chave: $valor </p>";
     }
+    //apagar posição
+    unset($mapa1[2]);
+    print_r($mapa1);
 ?>
