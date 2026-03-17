@@ -9,4 +9,9 @@
     $mapa2[2] = "José";
     $mapa2[3] = "Clara";
     print_r($mapa2);
+
+    $contatos["Vanessa"] = "123456";
+    $contatos["José"] = "098756";
+    echo "<p></p>";
+    print_r($contatos);
 ?>
