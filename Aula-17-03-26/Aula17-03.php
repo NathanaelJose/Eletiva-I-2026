@@ -18,4 +18,8 @@
     foreach($contatos as $valor){
         echo "<p>Telefone: $valor </p>";
     }
+
+    foreach($contatos as $chave => $valor){
+        echo "<p> Telefone de $chave: $valor </p>";
+    }
 ?>
