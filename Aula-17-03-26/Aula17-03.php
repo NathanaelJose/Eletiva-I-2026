@@ -14,4 +14,8 @@
     $contatos["José"] = "098756";
     echo "<p></p>";
     print_r($contatos);
+
+    foreach($contatos as $valor){
+        echo "<p>Telefone: $valor </p>";
+    }
 ?>
