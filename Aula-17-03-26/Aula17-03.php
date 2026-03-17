@@ -25,4 +25,8 @@
     //apagar posição
     unset($mapa1[2]);
     print_r($mapa1);
+
+    //funções
+    $quantidade = count($mapa2);
+    echo "<p>Qtd. elementos mapa 2: $quantidade</p>";
 ?>
