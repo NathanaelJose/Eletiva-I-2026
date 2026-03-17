@@ -22,7 +22,11 @@
 <?php
     if($_SERVER['REQUEST METHOD'] == "POST"){
         $mapa = $_POST['nota'];
-        
+        $copia_mapa = $mapa;
+        asort($mapa);
+        echo "<p>O menor valor é: ".$mapa[0]."</p>";
+        $posicao = array_search($mapa[0], $copia_mapa);
+        echo "<p>Na posição $posicao </p>";
     }
 ?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
