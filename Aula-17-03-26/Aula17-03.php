@@ -29,4 +29,6 @@
     //funções
     $quantidade = count($mapa2);
     echo "<p>Qtd. elementos mapa 2: $quantidade</p>";
+    asort($contatos); //ordenar pelo valor
+    ksort($contatos); //ordenar pela chave
 ?>
