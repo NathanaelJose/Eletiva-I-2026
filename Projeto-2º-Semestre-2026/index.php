@@ -13,16 +13,31 @@
     <form method="post">
       <div class="mb-3">
         <label class="form-label">Email</label>
-        <input name="email "type="text" class="form-control" placeholder="Digite seu email" required>
+        <input name="email"type="email" class="form-control" placeholder="Digite seu email" required>
       </div>
 
       <div class="mb-3">
         <label class="form-label">Senha</label>
-        <input name="senha" type="number" class="form-control" placeholder="Digite sua senha" required>
+        <input name="senha" type="senha" class="form-control" placeholder="Digite sua senha" required>
       </div>
 
       <button type="submit" class="btn btn-primary w-100">Entrar</button>
     </form>
+    <?php
+      session_start();
+      if ($_SERVER['REQUEST_METHOD'] == "POST"){
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+        if($email == "adm@adm" && $senha == '123'){
+          $_SESSION['nome'] = 'Administrador';
+          $_SESSION['acesso'] = true;
+          header('Location: principal.php');
+        } else{
+          $_SESSION['acesso'] = false;
+          echo "<p class='text-danger'>Email e/ou senha inválido</p>";
+        }
+      }
+    ?>
 
     <div class="text-center mt-3">
       <a href="cadastro.html">Criar conta</a>
