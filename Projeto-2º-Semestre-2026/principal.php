@@ -42,18 +42,19 @@
             Funções de Saída
         </a>
         <ul class="dropdown-menu" aria-labelledby="dropdown3">
-            <li><a class="dropdown-item" href="logout.php">Relatórios de Produtos</a></li>
+            <li><a class="dropdown-item" href="#">Relatórios de Produtos</a></li>
         </ul>
         </li>
 
 <li class="nav-item">
-  <a class="nav-link" aria-current="page" href="#">Sair</a>
+  <a class="nav-link" aria-current="page" href="logout.php">Sair</a>
 </li>
       </ul>
     </div>
   </div>
 </nav>
 <div class="container py-3">
+    <h2>Seja bem vindo <?= $_SESSION['nome'] ?>!</h2>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
