@@ -19,8 +19,8 @@
             <td>1</td>
             <td>Exemplo</td>
             <td class="d-flex gap-2">
-            <a href="#" class="btn btn-sm btn-warning">Editar</a>
-            <a href="#" class="btn btn-sm btn-info">Consultar</a>
+            <a href="alterar_categoria.php" class="btn btn-sm btn-warning">Editar</a>
+            <a href="consultar_categoria.php" class="btn btn-sm btn-info">Consultar</a>
             </td>
         </tr>
         
