@@ -11,7 +11,7 @@
 
 <div class="container mt-5">
     <div class="card shadow p-4">
-        <h2 class="text-center mb-4">🔢 Contagem com Loop FOR</h2>
+        <h2 class="text-center mb-4">Insira um Número</h2>
 
         <form method="post">
             <div class="mb-3">
