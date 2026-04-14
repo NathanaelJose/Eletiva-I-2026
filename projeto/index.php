@@ -24,9 +24,9 @@
         $email = $_POST['email'];
         $senha = $_POST['senha'];
         try{
-          $stmt = $pdo->prepare("SELECT * FROM usuario WHERE email = ?");
+          $stmt = $pdo->prepare("SELECT * FROM usuario WHERE email = ?"); /*? parametro*/
           $stmt->execute([$email]);
-          $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+          $usuario = $stmt->fetch(PDO::FETCH_ASSOC); /* recupera o usuário (dado)*/
           if($usuario && password_verify($senha, $usuario['senha'])){
             session_start();
             $_SESSION['acesso'] = true;
@@ -36,7 +36,7 @@
             echo "<p class='text-danger'>Credenciais inválidas!</p>";
           }
         } catch(\Exception $e){
-          echo "Erro: ".$e->getMessage();
+          echo "Erro: ".$e->getMessage(); /* padrão */
         }
       }
 
