@@ -31,16 +31,16 @@
   </div>
   <?php
     if($_SERVER['REQUEST_METHOD'] == "POST"){
-        require("conexao.php");
+        require("conexao.php"); /* require data base*/
         $nome = $_POST['nome'];
         $email = $_POST['email'];
-        $senha = password_hash($_POST['senha'], PASSWORD_BCRYPT);
+        $senha = password_hash($_POST['senha'], PASSWORD_BCRYPT); /*hash criptografado*/
         try{
-            $stmt = $pdo->prepare("INSERT INTO usuario (nome, email, senha) VALUES (?, ?, ?)");
+            $stmt = $pdo->prepare("INSERT INTO usuario (nome, email, senha) VALUES (?, ?, ?)"); /* um para cada valor*/
             if($stmt->execute([$nome, $email, $senha])){
-                header("location: index.php?cadastro=true");
+                header("location: index.php?cadastro=true"); // cadastro realizado //
             } else{
-                header("location: index.php?cadastro=false");
+                header("location: index.php?cadastro=false"); // cadastro com erro//
             }
         } catch(Exception $e){
             echo "Erro ao executar o comando SQL: ".$e->getMessage();
