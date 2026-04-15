@@ -23,7 +23,7 @@
         require('conexao.php');
         $email = $_POST['email'];
         $senha = $_POST['senha'];
-        try{
+        try{ // para caso der um erro que eu sei que não posso controlar (tratamento de exceção)
           $stmt = $pdo->prepare("SELECT * FROM usuario WHERE email = ?"); /*? parametro*/
           $stmt->execute([$email]);
           $usuario = $stmt->fetch(PDO::FETCH_ASSOC); /* recupera o usuário (dado)*/
