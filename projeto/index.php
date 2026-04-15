@@ -31,7 +31,7 @@
             session_start();
             $_SESSION['acesso'] = true;
             $_SESSION['nome'] = $usuario['nome'];
-            header('location: principal.php');
+            header('location: principal.php'); /*página de login*/
           } else {
             echo "<p class='text-danger'>Credenciais inválidas!</p>";
           }
