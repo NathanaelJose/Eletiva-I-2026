@@ -32,6 +32,7 @@
                 echo "Erro: ".$e->getMessage();
             }
         }
+        echo '<button onclick="history.back()">Voltar</button>';
     ?>
 <?php
     require_once('rodape.php');
