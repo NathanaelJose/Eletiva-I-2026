@@ -1,58 +1,38 @@
 <?php
-    require("cabecalho.php");
-    require("conexao.php");
+    require_once('cabecalho.php');
+    require_once('conexao.php');
     try{
-        $stmt = $pdo->query("SELECT * FROM categoria");
-        $dados = $stmt->fetchAll();
-    } catch(\Exception $e){
+        $stmt = $pdo->query('SELECT * FROM categoria');
+        $resultado = $stmt->fetchAll();
+
+    }catch(Exception $e){
         echo "Erro: ".$e->getMessage();
-    }
-    if (isset($_GET['cadastro']) && $_GET['cadastro']){
-        echo "<p class='text-success'>Cadastro realizado!</p>";
-    } else if (isset($_GET['cadastro']) && !$_GET['cadastro']){
-        echo "<p class='text-danger'>Erro ao cadastrar!</p>";
-    }
-    if (isset($_GET['editar']) && $_GET['editar']){
-        echo "<p class='text-success'>Registro editado!</p>";
-    } else if (isset($_GET['editar']) && !$_GET['editar']){
-        echo "<p class='text-danger'>Erro ao editar!</p>";
-    }
-    if (isset($_GET['excluir']) && $_GET['excluir']){
-        echo "<p class='text-success'>Registro excluído!</p>";
-    } else if (isset($_GET['cadastro']) && !$_GET['cadastro']){
-        echo "<p class='text-danger'>Erro ao excluir!</p>";
     }
 ?>
 
 <h2>Categorias</h2>
-<a href="nova_categoria.php" class="btn btn-success mb-3">Novo Registro</a>
-<table class="table table-hover table-striped">
+    <a href="nova_categoria.php" class="btn btn-success mb-3">Novo Registro</a>
+    <table class="table table-hover table-striped">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Ações</th>
+        <th>ID</th>
+        <th>Descrição</th>
+        <th>Ações</th>
         </tr>
     </thead>
     <tbody>
-        <?php
-            foreach($dados as $d):
-        ?>
+        <?php foreach ($resultado as $r) : ?>
         <tr>
-            <td><?= $d['id'] ?></td>
-            <td><?= $d['nome'] ?></td>
+            <td><?= $r['id'] ?></td>
+            <td><?= $r['nome'] ?></td>
             <td class="d-flex gap-2">
-                <a href="editar_categoria.php?id=<?= $d['id'] ?>" class="btn btn-sm btn-warning">Editar</a>
-                <a href="consultar_categoria.php?id=<?= $d['id'] ?>" class="btn btn-sm btn-info">Consultar</a>
+            <a href="alterar_categoria.php?id=<?= $r['id'] ?>" class="btn btn-sm btn-warning">Editar</a>
+            <a href="consultar_categoria.php?id=<?= $r['id'] ?>" class="btn btn-sm btn-info">Consultar</a>
             </td>
         </tr>
-        <?php
-            endforeach;
-        ?>
+        <?php endforeach; ?>
     </tbody>
-</table>
-
+    </table>
 
 <?php
-require("rodape.php");
-?>
+    require_once('rodape.php');
