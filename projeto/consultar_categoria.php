@@ -1,11 +1,19 @@
 <?php
     require_once('cabecalho.php');
+    require_once('conexao.php');
+    try{
+        $stmt = $pdo->prepare('SELECT * FROM categoria WHERE id=?');
+        $stmt->execute($_GET['id']);
+        $resultado = $stmt->fetch();
+    } catch(Exception $e){
+        echo "Erro! ".$e->getMessage();
+    }
 ?>
 
 <h1>Consultar Categoria</h1>
     <form method="post">
         <div class="mb-3">
-              <p><strong>Descrição:</strong> Descrição </p>
+              <p><strong>Descrição:</strong> <?= $resultado['nome']?> </p>
         </div>
         <button type="submit" class="btn btn-danger">Excluir</button>
     </form>
