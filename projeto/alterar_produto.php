@@ -48,8 +48,13 @@
         <div class="mb-3">
             <label for="valor" class="form-label">Selecione a categoria</label>
             <select name="categoria" id="categoria" required class="form-select">
-              <?php foreach($resultado2 as $r): ?>
-                <option value="<?=$r['id']?>"><?= $r['nome'] ?></option>
+              <?php foreach($resultado2 as $r): 
+                    if($resultado['categoria_id' == $r['id']])
+                    $selecionado = "selected";
+                    else
+                      $selecionado = "";
+              ?>
+                <option <?= $selecionado ?>  value="<?= $r['id']?>"><?= $r['nome'] ?></option>
               <?php endforeach; ?>
             </select>
         </div>
