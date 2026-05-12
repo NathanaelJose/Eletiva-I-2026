@@ -8,7 +8,7 @@
         $categoria = $_POST['categoria'];
         $id = $_GET['id'];
         try{
-          $sql = "UPDATE categoria SET descricao = ?, valor = ?, categoria_id = ? WHERE id = ?";
+          $sql = "UPDATE produto SET descricao = ?, valor = ?, categoria_id = ? WHERE id = ?";
           $stmt = $pdo->prepare($sql);
           if($stmt->execute([$descricao, $valor, $categoria, $id])){
             $mensagem = "<p>Alteração realizada!</p>";
