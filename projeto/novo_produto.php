@@ -17,13 +17,13 @@
         </div>
         <div class="mb-3">
               <label for="nome" class="form-label">Informe o valor</label>
-              <input type="text" id="descricao" name="descricao" class="form-control" required="">
+              <input type="text" id="valor" name="valor" class="form-control" required="">
         </div>
         <div class="mb-3">
               <label for="categoria" class="form-label">Selecione a categoria</label>
               <select required name="categoria" id="categoria" class="form-select">
                 <?php foreach($resultado as $r): ?>
-                  <option value="<?= $r['id'] ?>"><?= $r['descricao'] ?></option>
+                  <option value="<?= $r['id'] ?>"><?= $r['nome'] ?></option>
                 <?php endforeach; ?>
               </select>
         </div>

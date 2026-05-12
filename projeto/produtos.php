@@ -2,7 +2,8 @@
     require_once('cabecalho.php');
     require_once('conexao.php');
     try{
-        $stmt = $pdo->query('SELECT * FROM produto');
+        $stmt = $pdo->query('SELECT p.*, c.nome FROM produto p
+                                INNER JOIN categoria c ON c.id = p.categoria_id');
         $resultado = $stmt->fetchAll();
     } catch(Exception $e){
         echo "Erro: ".$e->getMessage();
