@@ -49,8 +49,8 @@
             <label for="valor" class="form-label">Selecione a categoria</label>
             <select name="categoria" id="categoria" required class="form-select">
               <?php foreach($resultado2 as $r): 
-                    if($resultado['categoria_id' == $r['id']])
-                    $selecionado = "selected";
+                    if($resultado['categoria_id'] == $r['id'])
+                      $selecionado = "selected";
                     else
                       $selecionado = "";
               ?>
