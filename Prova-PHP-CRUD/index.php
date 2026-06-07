@@ -18,7 +18,7 @@
 
       <div class="mb-3">
         <label class="form-label">Senha</label>
-        <input name="senha" type="senha" class="form-control" placeholder="Digite sua senha" required>
+        <input name="senha" type="password" class="form-control" placeholder="Digite sua senha" required>
       </div>
 
       <button type="submit" class="btn btn-primary w-100">Entrar</button>
