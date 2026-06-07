@@ -2,7 +2,6 @@
 require_once('cabecalho.php'); 
 require_once('conexao.php');
 
-// Corrigi o JOIN para relacionar corretamente
 $stmt = $pdo->query("SELECT * FROM peca ORDER BY id DESC");
 $pecas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
