@@ -8,6 +8,9 @@ $pecas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <div class="d-flex justify-content-between align-items-center mb-3 mt-4">
     <h3 class="mb-0 text-secondary"><i class="bi bi-box-seam me-2"></i>Estoque de Peças</h3>
+    <a href="nova_peca.php" class="btn btn-success shadow-sm">
+        <i class="bi bi-plus-circle me-1"></i> Cadastrar Nova Peça
+    </a>
 </div>
 
 <div class="card shadow-sm border-0">
@@ -16,7 +19,7 @@ $pecas = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="text-center py-5">
                 <i class="bi bi-box-seam" style="font-size: 3rem; color: #ccc;"></i>
                 <h5 class="text-muted mt-3">Estoque vazio.</h5>
-                <a href="nova_peca.php" class="btn btn-primary mt-2">Cadastrar Primeira Peça</a>
+                <p class="text-muted small">Clique no botão acima para adicionar itens.</p>
             </div>
         <?php else: ?>
             <div class="table-responsive">
@@ -39,7 +42,7 @@ $pecas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <td><span class="badge bg-info text-dark"><?= $p['quantidade'] ?></span></td>
                                 <td class="text-end pe-4">
                                     <a href="editar_peca.php?id=<?= $p['id'] ?>" class="btn btn-sm btn-outline-warning me-1">
-                                    <i class="bi bi-pencil-square"></i>
+                                        <i class="bi bi-pencil-square"></i>
                                     </a>
                                     <a href="excluir_peca.php?id=<?= $p['id'] ?>" 
                                        class="btn btn-sm btn-outline-danger" 
