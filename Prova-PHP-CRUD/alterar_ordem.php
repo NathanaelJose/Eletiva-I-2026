@@ -2,7 +2,6 @@
 require_once('cabecalho.php'); 
 require_once('conexao.php');
 
-// Verifica se o ID foi passado na URL
 if (!isset($_GET['id'])) {
     header('Location: ordens.php');
     exit();
@@ -10,12 +9,10 @@ if (!isset($_GET['id'])) {
 
 $id = $_GET['id'];
 
-// Busca os dados da O.S. específica
 $stmt = $pdo->prepare("SELECT * FROM ordem_servico WHERE id = ?");
 $stmt->execute([$id]);
 $os = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// Se o usuário clicar no botão "Atualizar"
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $cliente = $_POST['cliente'];
     $veiculo = $_POST['veiculo'];

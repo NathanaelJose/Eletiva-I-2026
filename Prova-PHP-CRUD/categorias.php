@@ -1,8 +1,7 @@
 <?php 
 require_once('cabecalho.php'); 
-require_once('conexao.php'); // Importante para conectar ao banco de dados
+require_once('conexao.php');
 
-// Busca as categorias no banco de dados da mais recente para a mais antiga
 try {
     $stmt = $pdo->query("SELECT * FROM categoria ORDER BY id DESC");
     $categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
