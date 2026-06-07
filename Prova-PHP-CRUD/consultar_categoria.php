@@ -1,6 +1,6 @@
 <?php
-require_once 'cabecalho.php';
-require_once 'conexao.php';
+require_once('cabecalho.php');
+require_once('conexao.php');
 
 if (!isset($_GET['id'])) {
     header('Location: categorias.php');
@@ -9,14 +9,16 @@ if (!isset($_GET['id'])) {
 
 $id = $_GET['id'];
 
+// exclusão
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $stmt = $pdo->prepare('DELETE FROM categorias WHERE id = ?');
+    $stmt = $pdo->prepare('DELETE FROM categoria WHERE id = ?');
     $stmt->execute([$id]);
     header('Location: categorias.php');
     exit();
 }
 
-$stmt = $pdo->prepare('SELECT * FROM categorias WHERE id = ?');
+// consulta
+$stmt = $pdo->prepare('SELECT * FROM categoria WHERE id = ?');
 $stmt->execute([$id]);
 $categoria = $stmt->fetch();
 ?>

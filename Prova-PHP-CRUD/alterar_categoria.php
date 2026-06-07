@@ -1,6 +1,6 @@
 <?php
-require_once 'cabecalho.php';
-require_once 'conexao.php';
+require_once('cabecalho.php');
+require_once('conexao.php');
 
 if (!isset($_GET['id'])){
     header('Location: categorias.php');
@@ -9,13 +9,13 @@ if (!isset($_GET['id'])){
 
 $id = $_GET['id'];
 
-$stmt = $pdo->prepare('SELECT * FROM categorias WHERE id = ?');
+$stmt = $pdo->prepare('SELECT * FROM categoria WHERE id = ?');
 $stmt->execute([$id]);
 $categoria = $stmt->fetch();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $descricao = $_POST['descricao'];
-    $stmt = $pdo->prepare('UPDATE categorias SET descricao = ? WHERE id = ?');
+    $stmt = $pdo->prepare('UPDATE categoria SET descricao = ? WHERE id = ?');
     $stmt->execute([$descricao, $id]);
     header('Location: categorias.php');
     exit();

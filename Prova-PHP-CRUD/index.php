@@ -45,7 +45,7 @@
       }
     ?>
     <div class="text-center mt-3">
-      <a href="cadastro.html">Criar conta</a>
+      <a href="cadastro.php">Criar conta</a>
     </div>
   </div>
 
