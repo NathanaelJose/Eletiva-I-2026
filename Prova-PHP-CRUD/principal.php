@@ -12,8 +12,8 @@
 
 <div class="row mb-4 mt-2">
         <div class="col">
-            <h2>Seja bem-vindo, <span class="text-primary"><?= $_SESSION['nome'] ?></span>!</h2>
-            <p class="text-muted">Painel de gerenciamento da Oficina Mecânica.</p>
+            <h2>Seja Bem-Vindo, <span class="text-primary"><?= $_SESSION['nome'] ?></span>!</h2>
+            <p class="text-muted">Painel de Gerenciamento da Oficina Mecânica.</p>
         </div>
     </div>
 
